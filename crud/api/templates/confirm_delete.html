@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form method="post">
+        {% csrf_token %}
+        <h4>Are you sure to delete {{book.title}}</h4>
+        <a href="{% url 'book_list' %}"><button>Cancel</button></a>
+        <a><button method="POST" type="submit">Delete</button></a>
+        <br><br>
+        <!-- <label for="DAA">Do not Ask Again</label>
+        <input name="DAA" type="radio" placeholder="Do not ask again"> -->
+    </form>
+    
+</body>
+</html>

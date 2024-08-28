@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD APP</title>
+</head>
+<body>
+
+    <center><h1>Book List</h1></center>
+    
+    <center>
+        <a href="{% url 'create_book' %}"><button>Add Book</button></a>
+
+        <ul>
+            {% for book in books %}
+
+             <div style="border:solid black 1px;">
+                <h3>{{book.title}}</h3>
+                <h4>{{book.author}}</h5>
+                <h5>{{book.year}}</h5>
+            <div>
+
+                <a href="{% url 'edit_book' book.pk %}"><button>Edit</button></a>
+                <a href="{% url 'delete_book' book.pk %}"><button>Delete</button></a>
+                <br><br>
+            </div>
+             </div>
+
+            {% endfor %}
+        </ul>
+    </center>
+
+
+
+
+    
+    
+</body>
+</html>
